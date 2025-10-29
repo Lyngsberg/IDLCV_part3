@@ -1,7 +1,7 @@
 import torch
 import os
 
-DATA_PATH = '/dtu/datasets1/02516/phc_data'
+DATA_PATH = '/phc_data'
 
 class PhC(torch.utils.data.Dataset):
     def __init__(self, train, transform):

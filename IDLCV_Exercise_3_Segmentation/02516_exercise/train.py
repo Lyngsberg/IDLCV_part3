@@ -18,6 +18,7 @@ from lib.model.EncDecModel import EncDec
 from lib.model.DilatedNetModel import DilatedNet
 from lib.model.UNetModel import UNet, UNet2
 from lib.losses import BCELoss, DiceLoss, FocalLoss, BCELoss_TotalVariation
+from lib.dataset.PhCDataset import PhC
 
 # Dataset
 size = 128
@@ -40,7 +41,7 @@ print(f"Loaded {len(trainset)} training images")
 print(f"Loaded {len(testset)} test images")
 
 # Training setup
-device = ...
+device = 'GPU'
 model = EncDec().to(device)
 #model = UNet().to(device) # TODO
 #model = UNet2().to(device) # TODO
@@ -88,5 +89,5 @@ for epoch in range(epochs):
     print(f' - loss: {avg_loss}')
 
 # Save the model
-torch.save(model, ....)
+torch.save(model, "model.pth")
 print("Training has finished!")
