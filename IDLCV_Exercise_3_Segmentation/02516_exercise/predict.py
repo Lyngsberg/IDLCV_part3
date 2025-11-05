@@ -46,7 +46,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 # --- inference and save results ---
 print("Generating segmentation masks...")
 with torch.no_grad():
-    for idx, (image, _) in enumerate(test_loader):
+    for idx, (image, _) in enumerate(test_dataset):
         image = image.to(DEVICE)
         output = model(image)
 
