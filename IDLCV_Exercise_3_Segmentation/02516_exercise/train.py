@@ -41,7 +41,7 @@ print(f"Loaded {len(trainset)} training images")
 print(f"Loaded {len(testset)} test images")
 
 # Training setup
-device = 'GPU'
+device = 'cuda'
 model = EncDec().to(device)
 #model = UNet().to(device) # TODO
 #model = UNet2().to(device) # TODO
