@@ -39,6 +39,7 @@ print("Loading test dataset...")
 
 transform = transforms.ToTensor()
 test_dataset = PhC(train=False, transform=transform)
+print(f'Number of images: {len(test_dataset)}')
 
 # --- create results directory ---
 os.makedirs(RESULTS_DIR, exist_ok=True)
