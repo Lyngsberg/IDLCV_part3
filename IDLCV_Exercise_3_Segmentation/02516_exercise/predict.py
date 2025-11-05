@@ -34,8 +34,11 @@ model.eval()
 
 # --- load test dataset ---
 print("Loading test dataset...")
-test_dataset = DatasetLoader(split='test', transform=transforms.ToTensor())
-test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
+# test_dataset = DatasetLoader(split='test', transform=transforms.ToTensor())
+# test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
+
+transform = transforms.ToTensor()
+test_dataset = PhC(train=False, transform=transform)
 
 # --- create results directory ---
 os.makedirs(RESULTS_DIR, exist_ok=True)
