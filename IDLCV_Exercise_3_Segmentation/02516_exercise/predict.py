@@ -25,7 +25,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Loading model...")
 model = EncDec()
 torch.serialization.add_safe_globals([EncDec])
-model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
+model.torch.load(MODEL_PATH, map_location=DEVICE)
 model.to(DEVICE)
 model.eval()
 
