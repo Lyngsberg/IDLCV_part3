@@ -24,9 +24,11 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # --- load model ---
 print("Loading model...")
 model = EncDec()
+
 torch.serialization.add_safe_globals([EncDec])
-checkpoint = torch.load(MODEL_PATH, map_location=DEVICE, weights_only=False)
-model.load_state_dict(checkpoint)
+
+# Load the full model directly
+model = torch.load(MODEL_PATH, map_location=DEVICE, weights_only=False)
 model.to(DEVICE)
 model.eval()
 
