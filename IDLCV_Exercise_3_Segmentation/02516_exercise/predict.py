@@ -6,8 +6,8 @@ import numpy as np
 import os
 
 # --- import your architecture and dataset ---
-from EncDecModel import EncDec          # Replace with your model class name
-from PhCDataset import PhC      # Must be defined in train.py
+from lib.model.EncDecModel import EncDec       # Replace with your model class name
+from lib.dataset.PhCDataset import PhC      # Must be defined in train.py
 
 # --- function to save masks ---
 def save_mask(array, path):
