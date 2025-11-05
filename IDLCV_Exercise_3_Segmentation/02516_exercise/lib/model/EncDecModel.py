@@ -1,3 +1,5 @@
+import torch.nn as nn
+
 class EncDec(nn.Module):
     def __init__(self):
         super().__init__()
