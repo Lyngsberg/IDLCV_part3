@@ -6,8 +6,8 @@ import numpy as np
 import os
 
 # --- import your architecture and dataset ---
-from model import MyModel            # Replace with your model class name
-from train import DatasetLoader      # Must be defined in train.py
+from EncDecModel import EncDec          # Replace with your model class name
+from PhCDataset import PhC      # Must be defined in train.py
 
 # --- function to save masks ---
 def save_mask(array, path):
@@ -22,7 +22,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # --- load model ---
 print("Loading model...")
-model = MyModel()
+model = EncDec()
 model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
 model.to(DEVICE)
 model.eval()
