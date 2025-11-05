@@ -3,7 +3,7 @@ import os
 import glob
 import PIL.Image as Image
 
-DATA_PATH = '/phc_data'
+DATA_PATH = 'phc_data'
 
 class PhC(torch.utils.data.Dataset):
     def __init__(self, train, transform):
